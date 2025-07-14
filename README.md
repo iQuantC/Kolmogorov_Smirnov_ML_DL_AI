@@ -17,7 +17,7 @@ KS Test is a statistical test that compares two sets of data to see if they come
 The KS test compares how similar the old and new data distributions are. A big difference means data drift, which can hurt model performance. 
 
 
-## DEMO
+## KS Test Demo
 Let's simulate KS Test for two datasets
 
 ```sh
@@ -145,6 +145,6 @@ rm -rf ksmirnov-venv
 ```
 
 # NEXT UP
-Data Drift Demo with Automated ML Model Retraining using Scikit-learn, Alibi Detect, and Apache Airflow.
+Data Drift Demo with Automated ML Model Retraining using Scikit-learn, Alibi Detect (using KSDrift() in Python), and Apache Airflow.
 
 # Like, Comment, and Subscribe to iQuant YouTube Channel
