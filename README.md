@@ -145,6 +145,6 @@ rm -rf ksmirnov-venv
 ```
 
 # NEXT UP
-Data Drift Demo with Automated ML Model Retraining using Scikit-learn, Alibi Detect (using KSDrift() in Python), and Apache Airflow.
+Data Drift Real-time Project with Automated ML Model Retraining using Scikit-learn, Alibi Detect (using KSDrift), and Apache Airflow. 
 
 # Like, Comment, and Subscribe to iQuant YouTube Channel
