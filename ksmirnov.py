@@ -1,39 +1,3 @@
-# Kolmogorov-Smirnov (KS) Statistical Test in ML, DL & AI
-In this project, we illustrate how the Kolmogorov-Smirnov (KS) statistical test works, and why it is commonly used in Machine Learning (ML), Deep Learning (DL) and Artificial Intelligence (AI).
-
-KS Test is a statistical test that compares two sets of data to see if they come from the same distribution. It helps to detect feature-level drift (per feature check).
-
-
-## How KS Test Works
-1. Take two (2) samples of data 
-2. Create Cummulative Distribution Functions (CDFs) for both samples
-3. Find the largest distance between the two CDF curves (i.e., the KS Statistic or D-Value)
-4. Interprete the results.  
-    1. If the KS Statistic is SMALL, (p-value > alpha). Then, the two distributions are "SIMILAR" which implies "NO SIGNIFICANT DRIFT"
-    2. If the KS Statistic is LARGE, (p-value < alpha). Then, the two distributions are "DIFFERENT" which implies "POSSIBLE DATA DRIFT" or there is "STATISTICALLY SIGNIFICANT DRIFT"
-
-
-## Summary
-The KS test compares how similar the old and new data distributions are. A big difference means data drift, which can hurt model performance (model drift). 
-
-
-## KS Test Illustration
-Let's simulate KS Test for two datasets
-
-```sh
-touch ksmirnov.py requirements.txt
-```
-
-```sh
-# requirements.txt
-
-numpy
-matplotlib
-scipy
-```
-
-```sh
-# ksmirnov.py
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -120,31 +84,3 @@ plt.grid(True)
 plt.legend()
 plt.savefig("ks_cdf_plot.png")
 print("Plot saved as ks_cdf_plot.png")
-```
-
-### Create Python Virtual Environment
-```sh
-python3 -m venv ksmirnov-venv
-source ksmirnov-venv/bin/activate
-```
- 
-### Install Dependencies
-```sh
-pip install -r requirements.txt
-```
-
-### Run the Script
-```sh
-python ksmirnov.py
-```
-
-### Clean Up
-```sh
-deactivate
-rm -rf ksmirnov-venv
-```
-
-# NEXT UP
-Data/Model Drift Real-time Project with Automated ML Model Retraining using Scikit-learn, Alibi Detect (using KSDrift), and Apache Airflow. 
-
-# Like, Comment, and Subscribe to iQuant YouTube Channel
