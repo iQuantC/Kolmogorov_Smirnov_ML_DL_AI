@@ -35,6 +35,7 @@ scipy
 ```sh
 # ksmirnov.py
 
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import ks_2samp
@@ -83,7 +84,14 @@ plt.axvline(mean_A, color='blue', linestyle='--', linewidth=2, label="Mean A")
 plt.axvline(mean_B, color='orange', linestyle='--', linewidth=2, label="Mean B")
 
 
-# Step 8: Labels
+# Step 8: Annotate data drift
+plt.annotate("Data Drift",
+             xy=((mean_A + mean_B) / 2, max(pdf_A.max(), pdf_B.max()) * 0.8),
+             xytext=(mean_A, max(pdf_A.max(), pdf_B.max()) * 0.95),
+             arrowprops=dict(facecolor='red', shrink=0.05, width=2, headwidth=8),
+             fontsize=12, color='red')
+
+# Step 9: Labels
 plt.title("Comparison of Bell Curves: Sample A vs Sample B")
 plt.xlabel("Value")
 plt.ylabel("Density")
@@ -91,19 +99,19 @@ plt.legend()
 plt.grid(True)
 
 
-# Step 9: Save the plot
+# Step 10: Save the plot
 plt.savefig("bell_curve_comparison.png")
 print("Plot saved as bell_curve_comparison.png")
 
 
-# Step 10: Run KS Test
+# Step 11: Run KS Test
 ks_stat, p_value = ks_2samp(sample_A, sample_B)
 
 print("KS Statistic (D-value):", ks_stat)
 print("P-value:", p_value)
 
 
-# Step 11: Plot CDFs
+# Step 12: Plot CDFs
 def plot_cdf(data, label):
     sorted_data = np.sort(data)
     cdf = np.arange(1, len(sorted_data) + 1) / len(sorted_data)
